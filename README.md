@@ -1,12 +1,12 @@
-Delivery Data:
+## Delivery Data:
 
-Overview
+### Overview
 This project provides a robust solution for delivery-related datasets, breaking down complex delivery information into structured, manageable tables.
 
-Project Structure
+### Project Structure
 The normalization script creates three distinct tables:
 
-Delivery Person Table:
+#### Delivery Person Table:
 
 Contains information about delivery personnel
 Columns:
@@ -19,7 +19,7 @@ Delivery_person_Ratings: Performance ratings
 
 
 
-Order Details Table:
+#### Order Details Table:
 
 Captures order-specific and environmental information
 Columns:
@@ -33,7 +33,7 @@ Delivery performance metrics
 
 
 
-Location Details Table:
+#### Location Details Table:
 
 Stores geographical information
 Columns:
@@ -45,7 +45,7 @@ Delivery location coordinates
 
 
 
-Why Use This Data?
+### Why Use This Data?
 1. Data Integrity and Organization
 
 Reduced Redundancy: Eliminates data duplication
@@ -59,13 +59,13 @@ Track individual performance metrics
 Identify top-performing delivery personnel
 Analyze age vs. performance correlations
 
-Operational Efficiency Insights
+### Operational Efficiency Insights
 
 Correlate weather conditions with delivery times
 Understand impact of traffic density on delivery performance
 Optimize route planning and resource allocation
 
-Business Intelligence
+### Business Intelligence
 
 Identify peak delivery times
 Analyze festival impact on delivery operations
@@ -81,7 +81,7 @@ Routing optimization algorithms
 
 
 
-Use Cases
+### Use Cases
 
 Logistics Companies
 
