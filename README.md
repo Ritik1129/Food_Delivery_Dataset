@@ -1,7 +1,7 @@
 ## Delivery Data:
 
 ### Overview
-This project provides a robust solution for delivery-related datasets, breaking down complex delivery information into structured, manageable tables.
+This dataset provides a robust solution for delivery-related datasets, breaking down complex delivery information into structured, manageable tables.
 
 ### Project Structure
 The normalization script creates three distinct tables:
