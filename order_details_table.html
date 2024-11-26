@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Details Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #f6d365, #fda085);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    .table-container {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      overflow-x: auto;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      transition: transform 0.3s;
+    }
+    table:hover {
+      transform: scale(1.02);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+      transition: background-color 0.3s ease-in-out;
+    }
+    th {
+      background-color: #f39c12;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #f5e6ca;
+    }
+  </style>
+</head>
+<body>
+  <div class="table-container">
+    <h1>Order Details Table</h1>
+    <table id="csvTable"></table>
+  </div>
+
+  <script>
+    const csvFileUrl = './order_details_table.csv'; 
+
+    async function fetchAndDisplayCSV() {
+      try {
+        const response = await fetch(csvFileUrl);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const csvText = await response.text();
+        const rows = csvText.split('\n').map(row => row.split(','));
+
+        const table = document.getElementById('csvTable');
+        rows.forEach((row, rowIndex) => {
+          const tr = document.createElement('tr');
+          row.forEach(cell => {
+            const cellElement = document.createElement(rowIndex === 0 ? 'th' : 'td');
+            cellElement.textContent = cell.trim();
+            tr.appendChild(cellElement);
+          });
+          table.appendChild(tr);
+        });
+      } catch (error) {
+        console.error('Failed to fetch CSV file:', error);
+      }
+    }
+
+    fetchAndDisplayCSV();
+  </script>
+</body>
+</html>
